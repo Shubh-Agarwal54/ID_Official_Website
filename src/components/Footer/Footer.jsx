@@ -170,15 +170,15 @@ const Footer = () => {
 
             {/* Legal Links */}
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-300">
+              <button onClick={() => {}} className="text-gray-400 hover:text-accent-cyan transition-colors duration-300 bg-transparent border-0 cursor-pointer p-0">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-300">
+              </button>
+              <button onClick={() => {}} className="text-gray-400 hover:text-accent-cyan transition-colors duration-300 bg-transparent border-0 cursor-pointer p-0">
                 Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-accent-cyan transition-colors duration-300">
+              </button>
+              <button onClick={() => {}} className="text-gray-400 hover:text-accent-cyan transition-colors duration-300 bg-transparent border-0 cursor-pointer p-0">
                 Cookie Policy
-              </a>
+              </button>
             </div>
           </div>
         </div>
