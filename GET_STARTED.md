@@ -240,9 +240,14 @@ After running `npm start`, test these:
 ## 🚢 Deployment Options
 
 ### Option 1: Vercel (Recommended)
+The project is now configured with Vercel CLI. Deploy to production with:
 ```bash
-npm install -g vercel
-vercel
+npm run deploy:vercel
+```
+
+Or use the Vercel CLI directly:
+```bash
+vercel --prod
 ```
 
 ### Option 2: Netlify

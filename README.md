@@ -143,6 +143,22 @@ yarn build
 
 This creates an optimized production build in the `build` folder.
 
+### Step 4: Deploy to Vercel (Production)
+```bash
+npm run deploy:vercel
+```
+
+This command deploys your application to Vercel's production environment. Make sure you're logged into Vercel CLI first. The project includes `vercel.json` configuration for optimal deployment.
+
+## 📜 Available Scripts
+
+In the project directory, you can run:
+
+- `npm start` - Runs the app in development mode at http://localhost:3000
+- `npm run build` - Builds the app for production to the `build` folder
+- `npm test` - Launches the test runner in interactive watch mode
+- `npm run deploy:vercel` - Deploys the app to Vercel production environment
+
 ## 🎨 Customization
 
 ### Colors
