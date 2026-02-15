@@ -360,8 +360,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Email</h4>
-                    <p className="text-gray-400">info@innovativedeveloper.com</p>
-                    <p className="text-gray-400">support@innovativedeveloper.com</p>
+                    <p className="text-gray-400">innovativedeveloper@pm.me</p>
+                    <p className="text-gray-400">innovativedeveloperzone@gmail.com</p>
                   </div>
                 </div>
 
@@ -371,8 +371,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <p className="text-gray-400">+1 (555) 123-4567</p>
-                    <p className="text-gray-400">Mon-Fri: 9AM - 6PM EST</p>
+                    <p className="text-gray-400">+91 8449365017</p>
+                    <p className="text-gray-400">Mon-Sun: 10AM - 10PM IST</p>
                   </div>
                 </div>
               </div>
@@ -407,3 +407,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
