@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebook,  FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp, FaYoutube } from 'react-icons/fa';
+import { FaFacebook,  FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa6';
 
 /**
  * Footer Component
@@ -41,7 +42,7 @@ const Footer = () => {
    * Social media links
    */
   const socialLinks = [
-    { icon: FaYouTube, url: 'https://youtube.com/@innovativedeveloper', color: 'hover:text-blue-500', label: 'Youtube' },
+    { icon: FaYoutube, url: 'https://youtube.com/@innovativedeveloper', color: 'hover:text-blue-500', label: 'Youtube' },
     { icon: FaFacebook, url: 'https://www.facebook.com/realinnovativedeveloper/', color: 'hover:text-sky-500', label: 'Facebook' },
     { icon: FaLinkedin, url: 'https://www.linkedin.com/company/innovativedeveloper', color: 'hover:text-blue-600', label: 'LinkedIn' },
     { icon: FaInstagram, url: 'https://www.instagram.com/innovative.developer/', color: 'hover:text-pink-500', label: 'Instagram' },
