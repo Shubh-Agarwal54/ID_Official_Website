@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp, FaYoutube } from 'react-icons/fa';
 
 /**
  * Footer Component
@@ -41,11 +41,11 @@ const Footer = () => {
    * Social media links
    */
   const socialLinks = [
-    { icon: FaFacebook, url: '#', color: 'hover:text-blue-500', label: 'Facebook' },
-    { icon: FaTwitter, url: '#', color: 'hover:text-sky-500', label: 'Twitter' },
-    { icon: FaLinkedin, url: '#', color: 'hover:text-blue-600', label: 'LinkedIn' },
-    { icon: FaInstagram, url: '#', color: 'hover:text-pink-500', label: 'Instagram' },
-    { icon: FaGithub, url: '#', color: 'hover:text-gray-400', label: 'GitHub' },
+    { icon: FaYouTube, url: 'https://youtube.com/@innovativedeveloper', color: 'hover:text-blue-500', label: 'Youtube' },
+    { icon: FaFacebook, url: 'https://www.facebook.com/realinnovativedeveloper/', color: 'hover:text-sky-500', label: 'Facebook' },
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/company/innovativedeveloper', color: 'hover:text-blue-600', label: 'LinkedIn' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/innovative.developer/', color: 'hover:text-pink-500', label: 'Instagram' },
+    { icon: FaGithub, url: 'https://github.com/kunalvvs', color: 'hover:text-gray-400', label: 'GitHub' },
   ];
 
   /**
@@ -197,4 +197,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
