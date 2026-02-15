@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp, FaYoutube } from 'react-icons/fa';
+import { FaFacebook,  FaLinkedin, FaInstagram, FaGithub, FaHeart, FaArrowUp, FaYoutube } from 'react-icons/fa';
 
 /**
  * Footer Component
@@ -197,5 +197,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
