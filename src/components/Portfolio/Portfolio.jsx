@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaExternalLinkAlt} from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +30,7 @@ const Portfolio = () => {
   const projectRefs = useRef([]);
 
   const [activeFilter, setActiveFilter] = useState('all');
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   /**
    * Portfolio projects data
@@ -287,3 +287,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
