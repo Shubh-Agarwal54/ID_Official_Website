@@ -54,7 +54,7 @@ const Contact = () => {
   /**
    * Phone validation regex (optional field)
    */
-  const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+  const phoneRegex = '';
 
   /**
    * Validate form fields
@@ -407,4 +407,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
