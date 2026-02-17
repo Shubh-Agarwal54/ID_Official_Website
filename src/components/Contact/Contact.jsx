@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { FaPaperPlane, FaUser, FaEnvelope, FaPhone, FaComment, FaCheckCircle } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +55,7 @@ const Contact = () => {
   /**
    * Phone validation regex (optional field)
    */
-  const phoneRegex = '';
+  const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,6}$/;
 
   /**
    * Validate form fields
@@ -125,7 +126,7 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
+    // Start form submission
     setIsSubmitting(true);
 
     // Animate button
@@ -134,8 +135,48 @@ const Contact = () => {
       duration: 0.2,
     });
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Prepare template parameters for admin notification
+      const adminTemplateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'Not provided',
+        message: formData.message,
+        title: 'New Contact Form Submission',
+      };
+
+      // Send admin notification email
+      console.log('Sending admin notification...');
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ADMIN,
+        adminTemplateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+      console.log('Admin notification sent successfully');
+
+      // Try to send auto-reply email (non-blocking if it fails)
+      try {
+        const autoReplyTemplateParams = {
+          from_name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        };
+
+        console.log('Sending auto-reply...');
+        await emailjs.send(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_AUTOREPLY,
+          autoReplyTemplateParams,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        );
+        console.log('Auto-reply sent successfully');
+      } catch (autoReplyError) {
+        // Log but don't fail the whole submission if auto-reply fails
+        console.warn('Auto-reply failed (non-critical):', autoReplyError);
+      }
+
+      // Success - show success message
       setIsSubmitting(false);
       setIsSubmitted(true);
 
@@ -164,7 +205,19 @@ const Contact = () => {
           onComplete: () => setIsSubmitted(false),
         });
       }, 5000);
-    }, 2000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setIsSubmitting(false);
+      
+      // Show error message
+      alert('Failed to send message. Please try again or contact us directly via email.');
+      
+      // Reset button animation
+      gsap.to('.submit-button', {
+        scale: 1,
+        duration: 0.2,
+      });
+    }
   };
 
   /**
