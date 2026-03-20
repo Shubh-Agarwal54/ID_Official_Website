@@ -258,27 +258,27 @@ const Contact = () => {
       className="section-container bg-gradient-to-b from-dark-800 to-dark-900 relative overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent-cobalt/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 -left-48 w-72 h-72 md:w-96 md:h-96 md:left-0 bg-accent-cyan/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 -right-48 w-72 h-72 md:w-96 md:h-96 md:right-0 bg-accent-cobalt/10 rounded-full blur-3xl"></div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div ref={titleRef} className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+        <div ref={titleRef} className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Let's discuss how we can help bring your digital vision to life
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div ref={formRef}>
-            <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
+          <div ref={formRef} className="w-full">
+            <form onSubmit={handleSubmit} className="glass-card p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   <FaUser className="inline mr-2" />
                   Full Name *
                 </label>
@@ -288,19 +288,19 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-dark-700/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-dark-700/50 border ${
                     errors.name ? 'border-red-500' : 'border-white/10'
                   } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300`}
                   placeholder="John Doe"
                 />
                 {errors.name && (
-                  <p className="mt-2 text-sm text-red-400">{errors.name}</p>
+                  <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.name}</p>
                 )}
               </div>
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   <FaEnvelope className="inline mr-2" />
                   Email Address *
                 </label>
@@ -310,19 +310,19 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-dark-700/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-dark-700/50 border ${
                     errors.email ? 'border-red-500' : 'border-white/10'
                   } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300`}
                   placeholder="john@example.com"
                 />
                 {errors.email && (
-                  <p className="mt-2 text-sm text-red-400">{errors.email}</p>
+                  <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.email}</p>
                 )}
               </div>
 
               {/* Phone Field */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   <FaPhone className="inline mr-2" />
                   Phone Number (Optional)
                 </label>
@@ -332,19 +332,19 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 bg-dark-700/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-dark-700/50 border ${
                     errors.phone ? 'border-red-500' : 'border-white/10'
                   } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300`}
                   placeholder="+1 (555) 123-4567"
                 />
                 {errors.phone && (
-                  <p className="mt-2 text-sm text-red-400">{errors.phone}</p>
+                  <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.phone}</p>
                 )}
               </div>
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-300 mb-2">
                   <FaComment className="inline mr-2" />
                   Your Message *
                 </label>
@@ -354,13 +354,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className={`w-full px-4 py-3 bg-dark-700/50 border ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-dark-700/50 border ${
                     errors.message ? 'border-red-500' : 'border-white/10'
                   } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-cyan focus:ring-2 focus:ring-accent-cyan/20 transition-all duration-300 resize-none`}
                   placeholder="Tell us about your project..."
                 ></textarea>
                 {errors.message && (
-                  <p className="mt-2 text-sm text-red-400">{errors.message}</p>
+                  <p className="mt-2 text-xs sm:text-sm text-red-400">{errors.message}</p>
                 )}
               </div>
 
@@ -368,11 +368,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="submit-button w-full neon-button inline-flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="submit-button w-full neon-button inline-flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="relative z-10 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="relative z-10 w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                     <span className="relative z-10">Sending...</span>
                   </>
                 ) : (
@@ -388,13 +388,13 @@ const Contact = () => {
             {isSubmitted && (
               <div
                 ref={successRef}
-                className="mt-6 glass-card p-6 bg-green-500/10 border-green-500/30"
+                className="mt-4 sm:mt-6 glass-card p-4 sm:p-6 bg-green-500/10 border-green-500/30"
               >
                 <div className="flex items-center gap-3 text-green-400">
-                  <FaCheckCircle className="text-2xl" />
+                  <FaCheckCircle className="text-xl sm:text-2xl flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-lg">Message Sent Successfully!</p>
-                    <p className="text-sm text-gray-300">We'll get back to you within 24 hours.</p>
+                    <p className="font-semibold text-base sm:text-lg">Message Sent Successfully!</p>
+                    <p className="text-xs sm:text-sm text-gray-300">We'll get back to you within 24 hours.</p>
                   </div>
                 </div>
               </div>
@@ -402,52 +402,52 @@ const Contact = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+          <div className="space-y-6 sm:space-y-8 w-full">
+            <div className="glass-card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-cobalt to-accent-cyan flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="text-xl text-white" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-accent-cobalt to-accent-cyan flex items-center justify-center flex-shrink-0">
+                    <FaEnvelope className="text-lg sm:text-xl text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Email</h4>
-                    <p className="text-gray-400">innovativedeveloper@pm.me</p>
-                    <p className="text-gray-400">innovativedeveloperzone@gmail.com</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold text-white mb-1 text-sm sm:text-base">Email</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm break-words">innovativedeveloper@pm.me</p>
+                    <p className="text-gray-400 text-xs sm:text-sm break-words">innovativedeveloperzone@gmail.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                    <FaPhone className="text-xl text-white" />
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                    <FaPhone className="text-lg sm:text-xl text-white" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <p className="text-gray-400">+91 8449365017</p>
-                    <p className="text-gray-400">Mon-Sun: 10AM - 10PM IST</p>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-semibold text-white mb-1 text-sm sm:text-base">Phone</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">+91 8449365017</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Mon-Sun: 10AM - 10PM IST</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="glass-card p-8 bg-gradient-to-br from-accent-cobalt/10 to-accent-cyan/10">
-              <h3 className="text-xl font-bold text-white mb-4">Ready to Start?</h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Whether you have a project in mind or just want to explore possibilities, 
+            <div className="glass-card p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-accent-cobalt/10 to-accent-cyan/10">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Ready to Start?</h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6">
+                Whether you have a project in mind or just want to explore possibilities,
                 we're here to help. Our team typically responds within 24 hours.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-center text-gray-300">
-                  <FaCheckCircle className="text-accent-cyan mr-3" />
+              <ul className="space-y-2 sm:space-y-3">
+                <li className="flex items-center text-sm sm:text-base text-gray-300">
+                  <FaCheckCircle className="text-accent-cyan mr-2 sm:mr-3 flex-shrink-0" />
                   Free initial consultation
                 </li>
-                <li className="flex items-center text-gray-300">
-                  <FaCheckCircle className="text-accent-cyan mr-3" />
+                <li className="flex items-center text-sm sm:text-base text-gray-300">
+                  <FaCheckCircle className="text-accent-cyan mr-2 sm:mr-3 flex-shrink-0" />
                   No-obligation quote
                 </li>
-                <li className="flex items-center text-gray-300">
-                  <FaCheckCircle className="text-accent-cyan mr-3" />
+                <li className="flex items-center text-sm sm:text-base text-gray-300">
+                  <FaCheckCircle className="text-accent-cyan mr-2 sm:mr-3 flex-shrink-0" />
                   Expert guidance
                 </li>
               </ul>
