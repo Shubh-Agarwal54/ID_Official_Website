@@ -174,7 +174,8 @@ const Hero = () => {
         {/* Company Name - Animated with GSAP */}
         <h1
           ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 parallax-element"
+          className="font-bold mb-6 parallax-element leading-tight break-words"
+          style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}
         >
           <span className="gradient-text">Innovative Developer</span>
         </h1>
